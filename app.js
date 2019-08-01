@@ -22,8 +22,15 @@ function validateName() {
 
 // validate zip function
 function validateZip() {
-    console.log('zip connected!');
-}
+  const zip = document.getElementById('zip');
+      const re = /^[a-zA-Z]{2,20}$/;
+      
+      if(!re.test(name.value)) {
+        name.classList.add('is-invalid');
+      } else {
+        name.classList.remove('is-invalid');
+      } 
+  }
 
 
 
