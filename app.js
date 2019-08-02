@@ -34,9 +34,16 @@ function validateZip() {
 
 
 
-// validate email function
+// validate email function NOTE: REMEMBER BACKSLASH \ LET'S YOU ESCAPE THE - AND .
 function validateEmail() {
-    console.log('email connected!');
+  const email = document.getElementById('email');
+  const re = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+
+  if (!re.test(email.value)) {
+    email.classList.add('is-invalid');
+  } else {
+    email.classList.remove('is-invalid');
+  }  
 }
 
 
